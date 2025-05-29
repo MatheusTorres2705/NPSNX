@@ -1,88 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pesquisa de Satisfação</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 { text-align: center; }
-    label { font-weight: bold; display: block; margin-top: 15px; }
-    input, select, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background-color: #000000;
-      color: white;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    .success {
-      color: black;
-      margin-top: 15px;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pesquisa de Satisfação Nx Boats</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    margin: 0; padding: 1rem;
+    color: #333;
+  }
+  .container {
+    max-width: 700px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #000;
+  }
+  form {
+    margin-top: 1rem;
+  }
+  fieldset {
+    border: none;
+    margin-bottom: 1.5rem;
+  }
+  legend {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+  }
+  input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  .scale-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 450px;
+    margin: 0.5rem 0 1rem;
+  }
+  .scale-label {
+    text-align: center;
+    flex: 1;
+  }
+  .scale-label input {
+    margin-bottom: 0.2rem;
+  }
+  button {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+</style>
 </head>
 <body>
+  <div class="container">
+    <h1>Pesquisa de Satisfação Nx Boats</h1>
+    <form>
+      <fieldset>
+        <legend>1. Você recebeu o barco em que condições de limpeza e montagem?</legend>
+        <label><input type="radio" name="limpeza" value="Excelente" /> Excelente</label>
+        <label><input type="radio" name="limpeza" value="Boa" /> Boa</label>
+        <label><input type="radio" name="limpeza" value="Regular" /> Regular</label>
+        <label><input type="radio" name="limpeza" value="Ruim" /> Ruim</label>
+        <label><input type="radio" name="limpeza" value="Péssima" /> Péssima</label>
+      </fieldset>
 
-  <h2>Pesquisa de Satisfação</h2>
+      <fieldset>
+        <legend>2. O atendimento da equipe de vendas atendeu às suas expectativas?</legend>
+        <label><input type="radio" name="atendimento" value="Sim, completamente" /> Sim, completamente</label>
+        <label><input type="radio" name="atendimento" value="Parcialmente" /> Parcialmente</label>
+        <label><input type="radio" name="atendimento" value="Não atendeu" /> Não atendeu</label>
+      </fieldset>
 
-  <form id="surveyForm">
-    <label>De 0 a 10, qual a chance de você nos recomendar?</label>
-    <input type="number" min="0" max="10" name="nps" required />
+      <fieldset>
+        <legend>3. O prazo de entrega da embarcação atendeu a suas expectativas?</legend>
+        <label><input type="radio" name="prazo" value="Sim" /> Sim</label>
+        <label><input type="radio" name="prazo" value="Parcialmente" /> Parcialmente</label>
+        <label><input type="radio" name="prazo" value="Não" /> Não</label>
+      </fieldset>
 
-    <label>O atendimento atendeu às suas expectativas?</label>
-    <select name="atendimento" required>
-      <option value="">Selecione</option>
-      <option value="Sim">Sim</option>
-      <option value="Não">Não</option>
-    </select>
+      <fieldset>
+        <legend>4. Como você avalia a qualidade do barco adquirido?</legend>
+        <label><input type="radio" name="qualidade" value="Excelente" /> Excelente</label>
+        <label><input type="radio" name="qualidade" value="Boa" /> Boa</label>
+        <label><input type="radio" name="qualidade" value="Regular" /> Regular</label>
+        <label><input type="radio" name="qualidade" value="Ruim" /> Ruim</label>
+        <label><input type="radio" name="qualidade" value="Péssima" /> Péssima</label>
+      </fieldset>
 
-    <label>Comentários ou sugestões:</label>
-    <textarea name="comentarios" rows="4"></textarea>
+      <fieldset>
+        <legend>5. Você recebeu todas as informações técnicas e comerciais do barco adquirido?</legend>
+        <label><input type="radio" name="info" value="Sim" /> Sim</label>
+        <label><input type="radio" name="info" value="Parcialmente" /> Parcialmente</label>
+        <label><input type="radio" name="info" value="Não" /> Não</label>
+      </fieldset>
 
-    <button type="submit">Enviar Resposta</button>
-    <div class="success" id="successMsg" style="display:none;">Obrigado! Sua resposta foi enviada.</div>
-  </form>
+      <fieldset>
+        <legend>6. Houve algum problema após a entrega do barco?</legend>
+        <label><input type="radio" name="problema" value="Não" /> Não</label>
+        <label><input type="radio" name="problema" value="Sim" /> Sim — Se sim, qual?</label>
+        <textarea name="problema_descricao" placeholder="Descreva aqui (opcional)"></textarea>
+      </fieldset>
 
-  <script>
-    document.getElementById("surveyForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+      <fieldset>
+        <legend>7. Em uma escala de 0 a 10 quanto você recomendaria nossa empresa/produto/serviço a um amigo ou colega?</legend>
+        <div class="scale-container">
+          <label class="scale-label"><input type="radio" name="nps" value="0" />0</label>
+          <label class="scale-label"><input type="radio" name="nps" value="1" />1</label>
+          <label class="scale-label"><input type="radio" name="nps" value="2" />2</label>
+          <label class="scale-label"><input type="radio" name="nps" value="3" />3</label>
+          <label class="scale-label"><input type="radio" name="nps" value="4" />4</label>
+          <label class="scale-label"><input type="radio" name="nps" value="5" />5</label>
+          <label class="scale-label"><input type="radio" name="nps" value="6" />6</label>
+          <label class="scale-label"><input type="radio" name="nps" value="7" />7</label>
+          <label class="scale-label"><input type="radio" name="nps" value="8" />8</label>
+          <label class="scale-label"><input type="radio" name="nps" value="9" />9</label>
+          <label class="scale-label"><input type="radio" name="nps" value="10" />10</label>
+        </div>
+      </fieldset>
 
-      const data = {
-        nps: this.nps.value,
-        atendimento: this.atendimento.value,
-        comentarios: this.comentarios.value
-      };
+      <fieldset>
+        <legend>8. Deixe aqui qualquer sugestão ou comentário que queira compartilhar: (opcional)</legend>
+        <textarea name="comentarios" placeholder="Escreva sua sugestão ou comentário"></textarea>
+      </fieldset>
 
-      console.log("Resposta recebida:", data);
-
-      // Simular armazenamento local (poderia ser integrado com Google Sheets via API)
-      let respostas = JSON.parse(localStorage.getItem("respostas") || "[]");
-      respostas.push(data);
-      localStorage.setItem("respostas", JSON.stringify(respostas));
-
-      // Resetar formulário
-      this.reset();
-      document.getElementById("successMsg").style.display = "block";
-      setTimeout(() => {
-        document.getElementById("successMsg").style.display = "none";
-      }, 4000);
-    });
-  </script>
-
+      <button type="submit">Enviar Pesquisa</button>
+    </form>
+  </div>
 </body>
 </html>
